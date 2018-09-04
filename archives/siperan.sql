@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 04, 2018 at 02:24 AM
+-- Generation Time: Sep 04, 2018 at 07:45 AM
 -- Server version: 5.7.23-0ubuntu0.18.04.1
 -- PHP Version: 7.2.7-0ubuntu0.18.04.2
 
@@ -36,6 +36,21 @@ CREATE TABLE `books` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books_log`
+--
+
+CREATE TABLE `books_log` (
+  `book_log_id` int(11) NOT NULL,
+  `staff_id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL,
+  `status` enum('add','remove') CHARACTER SET utf8 NOT NULL,
+  `quantities` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -97,6 +112,14 @@ ALTER TABLE `books`
   ADD UNIQUE KEY `isbn` (`isbn`);
 
 --
+-- Indexes for table `books_log`
+--
+ALTER TABLE `books_log`
+  ADD PRIMARY KEY (`book_log_id`),
+  ADD KEY `book_log_fk` (`book_id`),
+  ADD KEY `book_log_staff_fk` (`staff_id`);
+
+--
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
@@ -107,7 +130,10 @@ ALTER TABLE `staff`
 -- Indexes for table `transactions`
 --
 ALTER TABLE `transactions`
-  ADD PRIMARY KEY (`transaction_id`);
+  ADD PRIMARY KEY (`transaction_id`),
+  ADD KEY `staff_fk` (`staff_id`),
+  ADD KEY `user_fk` (`user_id`),
+  ADD KEY `book_fk` (`book_id`);
 
 --
 -- Indexes for table `users`
@@ -125,6 +151,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `books`
   MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `books_log`
+--
+ALTER TABLE `books_log`
+  MODIFY `book_log_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `staff`
 --
@@ -145,22 +176,19 @@ ALTER TABLE `users`
 --
 
 --
--- Constraints for table `books`
+-- Constraints for table `books_log`
 --
-ALTER TABLE `books`
-  ADD CONSTRAINT `books_ibfk_1` FOREIGN KEY (`book_id`) REFERENCES `transactions` (`transaction_id`);
+ALTER TABLE `books_log`
+  ADD CONSTRAINT `book_log_fk` FOREIGN KEY (`book_id`) REFERENCES `books` (`book_id`),
+  ADD CONSTRAINT `book_log_staff_fk` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
 
 --
--- Constraints for table `staff`
+-- Constraints for table `transactions`
 --
-ALTER TABLE `staff`
-  ADD CONSTRAINT `staff_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `transactions` (`transaction_id`);
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `transactions` (`transaction_id`);
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `book_fk` FOREIGN KEY (`book_id`) REFERENCES `books` (`book_id`),
+  ADD CONSTRAINT `staff_fk` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`),
+  ADD CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
