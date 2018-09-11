@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "privillege": "admin",
+    "identifier": "admin",
+    "password": "admin",
+    "fullname": "The Lord Admin"
+  },
+  {
+    "id": 2,
+    "privillege": "staff",
+    "identifier": "staff",
+    "password": "staff",
+    "fullname": "The Staff"
+  },
+  {
+    "id": 3,
+    "privillege": "staff",
+    "identifier": "staff-2",
+    "password": "staff-2",
+    "fullname": "The Staff 2"
+  }
+]

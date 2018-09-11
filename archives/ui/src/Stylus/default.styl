@@ -1,0 +1,317 @@
+indigo = #3F51B5
+grey = #ABABAB
+
+body
+  cursor default
+
+  .divider
+    padding 1em
+  header nav.navbar
+    background-color #FFF
+    border-bottom 2px solid indigo
+    .fa-shopping-cart
+      border 1px solid grey
+      border-radius 100%
+      margin-top -.5em
+      padding .5em
+  main
+    min-height 100vh
+    padding-top 2em
+    .carts
+      background-color #FFF
+      border 2px solid indigo
+      display none
+      padding 1em 0 2em
+      position fixed
+      right 6em
+      top 3.5em
+      width 280px
+      h3
+        font-size 14pt
+        text-align center
+        @media only screen and (max-width 379px)
+          font-size 12pt
+      span
+        display block
+        font-size 10pt
+        text-align center
+        @media only screen and (max-width 379px)
+          font-size 8pt
+      @media only screen and (max-width 991px)
+        right -2px
+        top 6em
+        z-index 9999
+      @media only screen and (max-width 379px)
+        width 200px
+  footer
+    border-top 2px solid grey
+    margin 4em 0 1em
+    padding 1em 0 0
+    .col-md-8
+      text-align right
+      @media only screen and (max-width 767px)
+        text-align center
+    @media only screen and (max-width 767px)
+      text-align center
+    @media only screen and (max-width 450px)
+      font-size 10pt
+    @media only screen and (max-width 387px)
+      font-size 8pt
+    @media only screen and (max-width 321px)
+      font-size 7pt
+    a
+      color #222
+      text-decoration none
+      &:hover
+        color #222
+    .list a
+      display inline-block
+      margin 0 .5em
+
+body.home-page, body.sell-book-page
+  padding 4em 0 0
+
+  .big-poster
+    img
+      width 100%
+      @media only screen and (max-width 767px)
+        display block
+        margin 0 auto
+        width 75%
+    h1
+      color #444
+      font-size 48pt
+      margin-top 1em
+      @media only screen and (max-width 991px)
+        font-size 32pt
+        margin-top .5em
+      @media only screen and (max-width 767px)
+        margin-top 1em
+        text-align center
+      @media only screen and (max-width 370px)
+        font-size 24pt
+    p
+      font-size 24pt
+      @media only screen and (max-width 991px)
+        font-size 16pt
+      @media only screen and (max-width 767px)
+        text-align center
+      @media only screen and (max-width 370px)
+        font-size 12pt
+    p.sub
+      font-size 18pt
+      margin-top -1em
+      @media only screen and (max-width 991px)
+        font-size 14pt
+      @media only screen and (max-width 767px)
+        text-align center
+      @media only screen and (max-width 370px)
+        font-size 10pt
+    .special-button
+      background transparent
+      color grey
+      cursor pointer
+      border 2px solid grey
+      display inline-block
+      font-size 16pt
+      margin 1em 0 0
+      padding .5em 3em
+      text-decoration none
+      @media only screen and (max-width 991px)
+        font-size 14pt
+      @media only screen and (max-width 767px)
+        display block
+        margin 0 auto
+        text-align center
+        width 50%
+      @media only screen and (max-width 426px)
+        font-size 12pt
+      @media only screen and (max-width 370px)
+        font-size 10pt
+      @media only screen and (max-width 324px)
+        font-size 8pt
+      &:hover
+        border 2px solid indigo
+        color indigo
+    .labels
+      @media only screen and (max-width 767px)
+        text-align center
+    a.label
+      color grey
+      border-bottom 2px solid grey
+      display inline-block
+      font-size 12pt
+      margin 1em .5em
+      padding .5em 1em
+      text-decoration none
+      @media only screen and (max-width 991px)
+        margin .5em .25em
+      @media only screen and (max-width 370px)
+        font-size 10pt
+      &:hover
+        color indigo
+        border-bottom 2px solid indigo
+    img.left
+      @media only screen and (max-width 767px)
+        margin 2em auto 0
+    input:not([type=submit])
+      background transparent
+      border none
+      border-bottom 2px solid grey
+      color grey
+      display block
+      font-size 16pt
+      margin 1em 0
+      padding .25em .5em
+      text-align right
+      width 300px
+      @media only screen and (max-width 767px)
+        margin 1em auto
+        text-align center
+      &:focus
+        border-bottom 2px solid indigo
+        color indigo
+      &:disabled
+        background-color #FFF
+        border-bottom 2px solid grey
+        color grey
+    input[type=submit]
+      &:disabled
+        color grey
+        cursor default
+        border 2px solid grey
+    input[type=file]
+      display none
+    .alert
+      padding-right 0
+      text-align right
+      @media only screen and (max-width 767px)
+        text-align center
+
+body.login-page form, body.register-page form
+  margin 8em auto 2em
+  width 32em
+
+  @media screen and (max-width 540px)
+    width 100%
+  .unique-underline
+    border 2px solid indigo
+    border-top none
+    display block
+    height 1em
+    margin -.5em auto 0
+    width 100%
+  h1
+    margin 0
+    padding 0
+    text-align center
+    a
+      color #222
+      text-decoration none
+  input:not([type=submit])
+    border none
+    border-bottom 2px solid grey
+    display block
+    font-size 16pt
+    margin 2em 0
+    padding .5em .25em
+    width 100%
+    &:focus
+      border-bottom 2px solid indigo
+      color indigo
+    &:disabled
+      background-color #FFF
+      border-bottom 2px solid grey
+      color grey
+  input[type=submit]
+    cursor pointer
+    color grey
+    background transparent
+    border 2px solid grey
+    display block
+    font-size 16pt
+    margin 3em auto 0
+    padding .5em .25em
+    width 75%
+    &:hover
+      color indigo
+      border 2px solid indigo
+    &:disabled
+      color grey
+      cursor default
+      border 2px solid grey
+body.login-page .alert, body.register-page .alert
+  display none
+  text-align center
+
+body.buy-books-page
+  main
+    padding 6em 0 1em
+    .loading
+      margin 4em auto
+      text-align center
+    .racks .card
+      margin 1em auto
+      width 100%
+      .special-button
+        border 2px solid grey
+        display block
+        padding .5em .25em
+        text-align center
+        width 100%
+        &:disabled
+          cursor default
+          color grey
+          border 2px solid grey
+        &:hover
+          cursor pointer
+          color indigo
+          border 2px solid indigo
+      img:hover
+        cursor zoom-in
+body.admin-page, body.staff-page
+  main
+    padding-top 4em
+    .row
+      padding-top 2em
+      .box
+        border 2px solid indigo
+        margin-bottom 1em
+        h3
+          background-color indigo
+          border-bottom 2px solid indigo
+          color #fff
+          font-size 16pt
+          margin 0
+          padding .25em 1em
+        .body, .footer
+          padding 1em
+          .no-margin
+            margin 0
+          .no-padding:first-child
+            padding 0
+          .no-padding
+            padding-top 1em
+          input[type=password], input[type=text]
+            border 0
+            border-bottom 1px solid indigo
+            border-radius 0
+            display none
+            width 100%
+          i.fa
+            cursor pointer
+            display inline-block
+            margin-left 12px
+          i.fa:first-child
+            margin-left 0
+        .footer
+          padding 0 1em 1em
+          .row
+            padding-top 0
+          input[type=password], input[type=text]
+            display inline-block
+body.static-page
+  main
+    padding-top 6em
+    p
+      text-align justify

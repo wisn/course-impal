@@ -1,0 +1,53 @@
+!!! 5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
+    %meta{name: 'X-UA-Compatible', content: 'IE=edge'}
+    %title Login to Libran
+    %link{rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.3/chosen.min.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: '/css/default.css'}
+  %body.login-page
+    %header
+      %nav.navbar.navbar-light.navbar-expand-lg.fixed-top
+        .container
+          %a.navbar-brand{href: '/'} Libran
+          %button.navbar-toggler{type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNav', 'aria-controls': 'navbarNav', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation'}
+            %span.fa.fa-bars
+          .collapse.navbar-collapse#navbarNav
+            %ul.navbar-nav.ml-auto
+              %li.nav-item
+                %a.nav-link{href: '/'} Home
+              %li.nav-item.active
+                %a.nav-link{href: '/login.html'}
+                  Login
+                  %span.sr-only (current)
+    %main
+      .container
+        %form{name: 'login'}
+          %h1
+            %a{href: '/'} Libran
+          %span.unique-underline{style: 'width: 75%'}
+          %input{type: 'text', name: 'identifier', placeholder: 'Identifier'}
+          %input{type: 'password', name: 'password', placeholder: 'Password'}
+          .alert.alert-light
+          %input{type: 'submit', value: 'Login'}
+    %footer
+      .container
+        .row
+          .col-md-4
+            Copyright &copy; 2018,
+            %a{href: '/'} Libran.
+          .col-md-8
+            .list
+              %a{href: '/help.html'} Help
+              %a{href: '/features.html'} Features
+              %a{href: '/bug-report.html'} Bug Report
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'}
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'}
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.3/chosen.jquery.min.js'}
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'}
+    %script{src: '/js/application.js'}
